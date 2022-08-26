@@ -1,0 +1,130 @@
+.welcome{
+    color: #ABD1CBFF;
+    background-color: #54006C;
+    border: 1px solid #54006C;
+    border-radius: 10px;
+    box-shadow: 5px 10px 8px 5px #888888;
+    padding: 10px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;    
+}
+.go-to-routines{
+    color: #54006C !important;
+    background-color: #ABD1CBFF;
+    border: 1px solid #ABD1CBFF;
+    border-radius: 10px;
+    box-shadow: 5px 10px 8px 5px #888888;
+    padding: 10px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;  
+}
+.brand-logo:hover{
+    color: #ABD1CBFF;
+}
+h1{
+    text-align: center;
+}
+h2, h3{
+    text-align: center;
+}
+span{
+    color: #ABD1CBFF
+}
+.logo{
+    color: #54006C
+}
+div{
+    text-align: center;
+}
+p{
+    margin: 10px 0 !important;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+form{
+    text-align: center;
+}
+
+.welcome-container{
+    width:800px !important;
+    margin-top: 100px !important;
+    text-align: center;
+    box-shadow: 5px 10px 8px 5px #888888;
+    border-radius: 10px;
+}
+.welcome-card{
+    background-color: azure !important;
+    border-radius: 10px !important; 
+}
+.login-container{
+    width: 400px !important;
+    margin-top: 100px !important;
+    text-align: center;
+}
+.routine-container{
+    width: 600px !important;
+    margin-top: 100px !important;
+    text-align: center;
+    box-shadow: 5px 10px 8px 5px #888888;
+    border-radius: 10px;
+}
+.routine-card{
+    border-radius: 10px !important;
+}
+
+
+
+/* ROUTINES */
+
+.routineItem{
+    font-size: 20px;
+}
+.completed{
+    text-decoration: line-through;
+    color: gray;
+}
+#routine-table{
+    align-content: center;
+    margin-top: 10px;
+    border-collapse: separate;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+    border: 1px solid black;
+}
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+table th:first-child{
+    border-top-left-radius:10px;
+} 
+table th:last-child{
+    border-top-right-radius:10px;
+}
+
+.not{
+    color: #000;
+}
+.del-header{
+    text-align: right;
+}
+.del{
+    float: right;
+    color: red;
+}
+
+input[type="checkbox"]{
+    float: right !important;
+    opacity: 100 !important;
+    pointer-events: all !important;
+}

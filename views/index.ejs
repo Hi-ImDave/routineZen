@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>RoutineZen</title>
+</head>
+<body>
+    <nav class="grey darken-3">
+        <div class="nav-wrapper container">
+    
+            <a href="#!" class="brand-logo center"><span>Routine</span><span class="logo">Zen</span></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="/routines">My Routines</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/auth/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container welcome-container">
+        <div class="card welcome-card">
+            <div class="card-content">
+                <div class="section">
+                    <h1 class="welcome">Welcome <%= name %></h1>
+                </div>
+                <div class="section">
+                    <h2 class="go-to-routines"><a href="/routines">Go to My Routines</a></h2>                   
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        M.Sidenav.init(document.querySelector('.sidenav'))
+    </script>
+</body>
+</html>
