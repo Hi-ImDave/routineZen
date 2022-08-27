@@ -6,6 +6,10 @@ const RoutineSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  dueDate: {
+    type: Date,
+    required: false,
+  },
   completed: {
     type: Boolean,
     required: true,

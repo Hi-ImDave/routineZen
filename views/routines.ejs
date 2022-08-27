@@ -39,7 +39,8 @@
                         <h2>Nothing to do</h2>
                     <% } %>
                     <form action="/routines/createRoutine" method='POST'>
-                        <input type="text" placeholder="Enter Routine" style="text-align: center" name='routineItem'>
+                        <input id="routineInput" type="text" placeholder="Enter Routine" style="text-align: center" name='routineItem'>
+                        <input id="dueDateInput" type="date" name="routineDueDate">
                         <input type="submit" value="Submit Routine">
                     </form>
 
@@ -47,11 +48,13 @@
                         <table id="routine-table">    
                             <tr>
                                 <th>Routine</th>
+                                <th>Due Date</th>
                                 <th class="del-header">Delete</th>
                             </tr>
                             <% routines.forEach( el => { %>
                             <tr class='routineItem' data-id='<%=el._id%>'>
                                 <td class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.routine %></td>
+                                <td><%= el.dueDate.toDateString() %></td>
                                 <td class='del fa-solid fa-trash-can'></td>
                                 <!-- <td><input type="checkbox"></td> -->
                             </tr>
