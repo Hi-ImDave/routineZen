@@ -12,6 +12,7 @@ const authRoutes = require('./routes/auth')
 const homeRoutes = require('./routes/home')
 const loginRoutes = require('./routes/login')
 const routineRoutes = require('./routes/routines')
+const bookRoutes = require('./routes/books')
 
 dotenv.config({path: './config/.env'})
 
@@ -47,6 +48,7 @@ app.use('/', loginRoutes)
 app.use('/auth', authRoutes)
 app.use('/home', homeRoutes)
 app.use('/routines', routineRoutes)
+app.use('/books', bookRoutes)
  
 app.listen(PORT, ()=>{
     console.log(`Server is running in ${process.env.NODE_ENV} on port ${PORT}`)

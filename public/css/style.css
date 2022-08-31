@@ -128,7 +128,7 @@ table th:last-child{
 .del-header{
     text-align: right;
 }
-.del{
+.del, .del-book{
     float: right;
     color: red;
 }
@@ -137,4 +137,20 @@ input[type="checkbox"]{
     float: right !important;
     opacity: 100 !important;
     pointer-events: all !important;
+}
+
+/* Books */
+
+#pageCountInput{
+    width: 200px;
+    display: block;
+    margin: auto;
+}
+
+#bookSubmit{
+    margin-top: 10px;
+}
+
+.completed-book{
+    color: green;
 }
