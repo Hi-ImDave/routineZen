@@ -33,7 +33,7 @@ module.exports = {
                 // : req.body.routineItem[0].toUpperCase() + req.body.routineItem.substring(1)
                 const newBook = req.body.bookItem[0].toUpperCase() + req.body.bookItem.substring(1) // only capatalizes first letter of first word
                 const newAuthor = req.body.authorName
-                const pageCount = req.body.pageCount
+                const pageCount = req.body.pageCount || 0
                 await Books.create({bookName: newBook, author: newAuthor, pageCount: pageCount, user: req.user.id, completed: false})
                 console.log(`"${newBook}" has been added to your book list!`)
                 res.redirect('/books') 

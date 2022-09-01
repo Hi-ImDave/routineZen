@@ -101,13 +101,13 @@ async function markIncomplete(){
 // BOOKS
 
 async function deleteBook(){
-    const routineId = this.parentNode.dataset.id
+    const bookId = this.parentNode.dataset.id
     try{
-        const response = await fetch('routines/deleteRoutine', {
+        const response = await fetch('books/deleteBook', {
             method: 'delete',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'routineIdFromJSFile': routineId
+                'bookIdFromJSFile': bookId
             })
         })
         const data = await response.json()

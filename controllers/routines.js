@@ -30,7 +30,7 @@ module.exports = {
                 // ? req.body.routineItem.split(' ').map((word) => word[0].toUpperCase() + word.substring(1)).join(' ') 
                 // : req.body.routineItem[0].toUpperCase() + req.body.routineItem.substring(1)
                 const newRoutine = req.body.routineItem[0].toUpperCase() + req.body.routineItem.substring(1) // only capatalizes first letter of first word
-                const newDueDate = req.body.routineDueDate
+                const newDueDate = new Date(req.body.routineDueDate.replace(/-/g, '\/').replace(/T.+/, '')) // regex here fixes issue of date being converted to local time
                 await Routine.create({routine: newRoutine, dueDate: newDueDate, user: req.user.id, completed: false})
                 console.log(`"${newRoutine}" has been added to your routines with a due date of "${newDueDate}"!`)
                 res.redirect('/routines') 
