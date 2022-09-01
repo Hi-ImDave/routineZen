@@ -3,7 +3,11 @@ const mongoose = require('mongoose')
 const UserSchema = new mongoose.Schema({
     googleId: {
         type: String,
-        required: true
+        required: false,
+    },
+    email: {
+        type: String,
+        required: false,
     },
     displayName: {
         type: String,
@@ -18,7 +22,8 @@ const UserSchema = new mongoose.Schema({
         required: true
     },
     image: {
-        type: String
+        type: String,
+        required: false,
     },
     createdAt: {
         type: Date,
