@@ -49,12 +49,15 @@
                             <tr>
                                 <th>Routine</th>
                                 <th>Due Date</th>
+                                <th>Created At</th>
                                 <th class="del-header">Delete</th>
                             </tr>
                             <% routines.forEach( el => { %>
                             <tr class='routineItem' data-id='<%=el._id%>'>
                                 <td class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.routine %></td>
-                                <td class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.dueDate.toDateString() %></td>
+                                <td class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.dueDate %></td>
+                                <td class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.createdAt %></td>
+
                                 <td class='del fa-solid fa-trash-can'></td>
                                 <!-- <td><input type="checkbox"></td> -->
                             </tr>
