@@ -17,7 +17,7 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
             <ul class="sidenav" id="mobile-demo">
                 <li><a href="/home">Home</a></li>
-                <li><a href="/books">My Book List</a></li>
+                <li><a href="/routines">My Routines</a></li>
                 <li><a href="/auth/logout">Logout</a></li>
             </ul>
         </div>
@@ -31,40 +31,45 @@
                 </div>
                 <div class="divider"></div>
                 <div class="section">
-                    <% if(routines.length && left === 1){ %>
-                        <h2>You have <%= left %> routine due</h2>
-                    <% } else if(routines.length){ %>
-                        <h2>You have <%= left %> routines due</h2>
+                    <% if(books.length && read === 1){ %>
+                        <h2>You have read <%= read %> book</h2>
+                    <% } else if(books.length){ %>
+                        <h2>You have read <%= read %> books</h2>
+                    <% }  %>
+                    <% if(books.length && unread === 1){ %>
+                        <h3>You have <%= unread %> unread book in your list</h3>
+                    <% } else if(books.length && unread > 1){ %>
+                        <h3>You have <%= unread %> unread books in your list</h3>
                     <% } else { %>
-                        <h2>Nothing to do</h2>
+                        <h3>No unread books in your list!</h3>
                     <% } %>
-                    <form action="/routines/createRoutine" method='POST'>
-                        <input id="routineInput" type="text" placeholder="Enter Routine" style="text-align: center" name='routineItem'>
-                        <input id="dueDateInput" type="date" style="text-align: center" name="routineDueDate">
-                        <input type="submit" value="Submit Routine">
+                    <form action="/books/createBook" method='POST'>
+                        <input id="routineInput" type="text" placeholder="Enter Book Name" style="text-align: center" name='bookItem'>
+                        <input id="dueDateInput" type="text" placeholder="Enter Author Name" style="text-align: center" name="authorName"> <!--author input change ids-->
+                        <input id="pageCountInput" type="number" placeholder="Enter Page Count" style="text-align: center" name="pageCount">
+                        <input id="bookSubmit" type="submit" value="Submit Book">
                     </form>
 
-                        <% if(routines.length){ %>
+                        <% if(books.length){ %>
                         <table id="routine-table">    
                             <tr>
-                                <th>Routine</th>
-                                <th>Due Date</th>
-                                <th>Created At</th>
+                                <th>Book</th>
+                                <th>Author</th>
+                                <th>Page Count</th>
                                 <th class="del-header">Delete</th>
                             </tr>
-                            <% routines.forEach( el => { %>
+                            <% books.forEach( el => { %>
                             <tr class='routineItem' data-id='<%=el._id%>'>
-                                <td class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.routine %></td>
-                                <td class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.dueDate %></td>
-                                <td class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.createdAt %></td>
-
-                                <td class='del fa-solid fa-trash-can'></td>
+                                <td class='<%= el.completed === true ? 'completed-book' : 'not-book'%>'><%= el.bookName %></td>
+                                <td class='<%= el.completed === true ? 'completed-book' : 'not-book'%>'><%= el.author %></td>
+                                <td class='<%= el.completed === true ? 'completed-book' : 'not-book'%>'><%= el.pageCount %></td>
+                                <td class='del-book fa-solid fa-trash-can'></td>
                                 <!-- <td><input type="checkbox"></td> -->
                             </tr>
                         <% }) %>
                         </table>
                         <% } else { %>
-                            <p class="routineItem">You do not have any routines yet!</p>                             
+                            <p class="routineItem">You do not have any books yet!</p>                             
                          <% } %>
                     
                 </div>

@@ -1,3 +1,7 @@
+body{
+    background-image: linear-gradient(to right, #54006C, #ABD1CBFF) !important;
+}
+
 .welcome{
     color: #ABD1CBFF;
     background-color: #54006C;
@@ -14,7 +18,7 @@
     background-color: #ABD1CBFF;
     border: 1px solid #ABD1CBFF;
     border-radius: 10px;
-    box-shadow: 5px 10px 8px 5px #888888;
+    /* box-shadow: 5px 10px 8px 5px #888888; */
     padding: 10px;
     width: fit-content;
     margin-left: auto;
@@ -66,17 +70,23 @@ form{
     text-align: center;
 }
 .routine-container{
-    width: 600px !important;
+    width: 800px !important;
     margin-top: 100px !important;
     text-align: center;
-    box-shadow: 5px 10px 8px 5px #888888;
+    /* box-shadow: 5px 10px 8px 5px #888888; */
     border-radius: 10px;
 }
 .routine-card{
     border-radius: 10px !important;
 }
 
+#routineInput{
+    width: 350px !important;
+}
 
+#dueDateInput{
+    width: 350px !important;
+}
 
 /* ROUTINES */
 
@@ -118,7 +128,7 @@ table th:last-child{
 .del-header{
     text-align: right;
 }
-.del{
+.del, .del-book{
     float: right;
     color: red;
 }
@@ -127,4 +137,20 @@ input[type="checkbox"]{
     float: right !important;
     opacity: 100 !important;
     pointer-events: all !important;
+}
+
+/* Books */
+
+#pageCountInput{
+    width: 200px;
+    display: block;
+    margin: auto;
+}
+
+#bookSubmit{
+    margin-top: 10px;
+}
+
+.completed-book{
+    color: green;
 }

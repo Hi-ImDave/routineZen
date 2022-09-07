@@ -1,5 +1,5 @@
 # RoutineZen
-Codewars is a platform that helps you learn, train, and improve your coding skills by solving programming tasks of many types and difficulty levels.
+app to set routines, and create a book list
 
 ## How It's Made:
 
@@ -9,6 +9,7 @@ Codewars is a platform that helps you learn, train, and improve your coding skil
 ## Optimizations
 
 Plan to come back and use React for UI and replace Materialize with either Tailwind or Bootstrap
+add booklist
 
 ## Lessons Learned:
 

@@ -18,6 +18,17 @@ module.exports = {
         }
     },
     createRoutine: async (req, res)=>{
+        const date = new Date()
+
+        const day = date.getDate() 
+        const month = date.getMonth()
+        const year = date.getFullYear()
+        const hour = date.getHours()
+        const minute = date.getMinutes()
+        const second = date.getSeconds()
+        const milliseconds = date.getMilliseconds()
+
+        const utcDate =  new Date(Date.UTC(year, month, day, hour, minute, second, milliseconds))
         try {   
             const routineItems = await Routine.find({user: req.user.id})
             const hasRoutine = await routineItems.some((routine) => routine.routine.toLowerCase() === req.body.routineItem.toLowerCase() && routine.user == req.user.id)
@@ -30,8 +41,9 @@ module.exports = {
                 // ? req.body.routineItem.split(' ').map((word) => word[0].toUpperCase() + word.substring(1)).join(' ') 
                 // : req.body.routineItem[0].toUpperCase() + req.body.routineItem.substring(1)
                 const newRoutine = req.body.routineItem[0].toUpperCase() + req.body.routineItem.substring(1) // only capatalizes first letter of first word
-                await Routine.create({routine: newRoutine, user: req.user.id, completed: false})
-                console.log(`"${newRoutine}" has been added to your routines!`)
+                const newDueDate = new Date(req.body.routineDueDate) // regex here fixes issue of date being converted to local time
+                await Routine.create({routine: newRoutine, createdAt: utcDate, dueDate: newDueDate, user: req.user.id, completed: false})
+                console.log(`"${newRoutine}" has been added to your routines with a due date of "${newDueDate}"!`)
                 res.redirect('/routines') 
             }    
         } catch(err){
